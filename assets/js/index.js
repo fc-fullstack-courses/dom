@@ -20,10 +20,8 @@ btn.addEventListener('click', btnListener);
 */
 const clickerBtn = document.getElementById('clicker');
 
-function clickerWrapper() {
-  let counter = 0;
-
-  return function clickerListener() {
+function clickerWrapper(counter = 0) {
+  return function clickerListener(object) {
     alert(++counter);
   };
 }
@@ -31,3 +29,24 @@ function clickerWrapper() {
 // const clickerListener = clickerWrapper();
 // clickerBtn.addEventListener('click', clickerListener);
 clickerBtn.addEventListener('click', clickerWrapper());
+
+// поиск элементов в DOM
+
+// 1  document.getElementById('clicker') по айдишнику
+
+/*
+getElementsByClassName()
+getElementsByName()
+getElementsByTagName()
+getElementsByTagNameNS()
+*/
+
+// const elements = document.getElementsByClassName('red');
+// const [div, p] = document.getElementsByClassName('red'); // по классу
+
+// const [input] = document.getElementsByName('firstName'); // attribute name
+
+const elements = document.getElementsByTagName('button'); // по тегу элемента
+
+const elem = document.querySelector('.red'); // ищет по сss селекторам
+const elems = document.querySelectorAll('.red');
