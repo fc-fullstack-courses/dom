@@ -51,16 +51,23 @@ document.
 
 // const [input] = document.getElementsByName('firstName'); // attribute name
 
-const elements = document.getElementsByTagName('button'); // по тегу элемента
+// const elements = document.getElementsByTagName('button'); // по тегу элемента
 
-const elem = document.querySelector('.red'); // ищет по сss селекторам
-const elems = document.querySelectorAll('.red');
+// const elem = document.querySelector('.red'); // ищет по сss селекторам
+// const elems = document.querySelectorAll('.red');
 
-const [, h1] = document.getElementsByTagName('h1');
-const h1V2 = document.getElementsByTagName('h1')[1];
-const h1v3 = document.querySelector('main > article > h1');
+const btn = document.querySelector('#btn');
 
-const span = document.querySelector('span');
+function btnListener() {
+  alert('test message');
+}
 
-const [ul] = document.getElementsByClassName('list');
-const ul1 = document.querySelector('.list');
+const listeners = {
+  btn: function () {
+    alert('test message');
+  },
+};
+
+btn.addEventListener('click', listeners.btn);
+
+btn.removeEventListener('click', listeners.btn);
