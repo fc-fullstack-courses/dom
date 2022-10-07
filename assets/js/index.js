@@ -59,10 +59,9 @@ document.
 const btn = document.querySelector('#btn');
 const div = document.querySelector('#div');
 function btnListener(event) {
-  // alert('test message');
-  console.log(event.target); // елемент с которым происходит событие
-  console.log(event.currentTarget); // елемент на которм сидит обработчик
-  console.log(event);
+  // console.log(event.target); // елемент с которым происходит событие
+  // console.log(event.currentTarget); // елемент на которм сидит обработчик
+  // console.log(event);
 }
 
 btn.addEventListener('click', btnListener);
@@ -70,3 +69,9 @@ div.addEventListener('click', btnListener);
 
 // const mouseEvent = new MouseEvent('click');
 // btn.dispatchEvent(mouseEvent);
+
+btn.textContent = 'Clicks: 0';
+/*
+  сделайте так чтобы ваш кликер отображал количество кликов
+  на себе (на своей конпке на которую нажимаете)
+*/
