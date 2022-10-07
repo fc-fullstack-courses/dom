@@ -65,9 +65,11 @@ function btnListener() {
 const listeners = {
   btn: function () {
     alert('test message');
+
+    btn.removeEventListener('click', listeners.btn);
   },
 };
 
 btn.addEventListener('click', listeners.btn);
 
-btn.removeEventListener('click', listeners.btn);
+
