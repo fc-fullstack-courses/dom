@@ -1,11 +1,4 @@
-.list {
-  background-color: red;
-}
-
-#item {
-}
-
-span {
-  color: green;
-  font-size: 50px;
+.div {
+  border: 10px solid black;
+  padding: 20px;
 }

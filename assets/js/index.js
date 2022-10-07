@@ -57,19 +57,16 @@ document.
 // const elems = document.querySelectorAll('.red');
 
 const btn = document.querySelector('#btn');
-
-function btnListener() {
-  alert('test message');
+const div = document.querySelector('#div');
+function btnListener(event) {
+  // alert('test message');
+  console.log(event.target); // елемент с которым происходит событие
+  console.log(event.currentTarget); // елемент на которм сидит обработчик
+  console.log(event);
 }
 
-const listeners = {
-  btn: function () {
-    alert('test message');
+btn.addEventListener('click', btnListener);
+div.addEventListener('click', btnListener);
 
-    btn.removeEventListener('click', listeners.btn);
-  },
-};
-
-btn.addEventListener('click', listeners.btn);
-
-
+// const mouseEvent = new MouseEvent('click');
+// btn.dispatchEvent(mouseEvent);
