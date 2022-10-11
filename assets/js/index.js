@@ -58,10 +58,18 @@ document.
 
 const btn = document.querySelector('#btn');
 const div = document.querySelector('#div');
+
 function btnListener(event) {
   // console.log(event.target); // елемент с которым происходит событие
   // console.log(event.currentTarget); // елемент на которм сидит обработчик
-  console.log(this);
+
+  // div.removeChild(btn);
+  // console.log(div.attributes);
+  // div.classList.add('container', 'test', 'IAmCustomMade');
+  // console.log(div.classList);
+  // div.classList.toggle('div');
+
+  console.log(div.children);
 }
 
 // btn.addEventListener('click', btnListener);
@@ -83,3 +91,9 @@ function clickerWrapper(counter = 0) {
 }
 
 btn.addEventListener('click', clickerWrapper());
+
+const img = document.querySelector('#img');
+img.setAttribute(
+  'src',
+  'https://monsterlessons.com/api/storage/uploads/posters/dc0d9f79-412d-4531-b7d0-415b97c13e7f/poster.png'
+);
