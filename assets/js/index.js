@@ -121,7 +121,9 @@ const imagesSrc = [
 let currentIndex = 0; // при 2 может быть булем
 
 // 3 меняем на другую
-img.addEventListener('click', (event) => {
+const prevBtn = document.querySelector('#prev');
+const nextBtn = document.querySelector('#next');
+nextBtn.addEventListener('click', (event) => {
   // event.target.setAttribute(
   //   'src',
   //   'https://mayertrade.com.ua/img/cms/bashnya/2.jpg'
@@ -138,4 +140,11 @@ img.addEventListener('click', (event) => {
   // if (currentIndex === imagesSrc.length) {
   //   currentIndex = 0;
   // }
+});
+
+prevBtn.addEventListener('click', () => {
+  // currentIndex = (currentIndex + 1) % imagesSrc.length;
+  currentIndex = currentIndex > 0 ? currentIndex - 1 : imagesSrc.length - 1;
+
+  img.setAttribute('src', imagesSrc[currentIndex]);
 });
