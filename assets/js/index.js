@@ -72,7 +72,7 @@ function btnListener(event) {
   console.log(div.children);
 }
 
-// btn.addEventListener('click', btnListener);
+btn.addEventListener('click', btnListener);
 // div.addEventListener('click', btnListener);
 
 // const mouseEvent = new MouseEvent('click');
@@ -93,7 +93,49 @@ function clickerWrapper(counter = 0) {
 btn.addEventListener('click', clickerWrapper());
 
 const img = document.querySelector('#img');
-img.setAttribute(
-  'src',
-  'https://monsterlessons.com/api/storage/uploads/posters/dc0d9f79-412d-4531-b7d0-415b97c13e7f/poster.png'
-);
+
+// img.setAttribute(
+//   'src',
+//   'https://monsterlessons.com/api/storage/uploads/posters/dc0d9f79-412d-4531-b7d0-415b97c13e7f/poster.png'
+// );
+
+// https://mayertrade.com.ua/img/cms/bashnya/2.jpg
+
+// 1 сохранить возможные значения
+const imagesSrc = [
+  // {
+  //   alt: 'text',
+  //   id: 0,
+  //   src: 'https://monsterlessons.com/api/storage/uploads/posters/dc0d9f79-412d-4531-b7d0-415b97c13e7f/poster.png',
+  // },
+  // {
+  //   alt: 'text',
+  //   id: 1,
+  //   src: 'https://monsterlessons.com/api/storage/uploads/posters/dc0d9f79-412d-4531-b7d0-415b97c13e7f/poster.png',
+  // },
+  'https://monsterlessons.com/api/storage/uploads/posters/dc0d9f79-412d-4531-b7d0-415b97c13e7f/poster.png',
+  'https://mayertrade.com.ua/img/cms/bashnya/2.jpg',
+  'https://www.xiper.net/assets/images/lessons/css/vf-html-document-tree.png',
+];
+// 2 знать, какая в данный момент стоит
+let currentIndex = 0; // при 2 может быть булем
+
+// 3 меняем на другую
+img.addEventListener('click', (event) => {
+  // event.target.setAttribute(
+  //   'src',
+  //   'https://mayertrade.com.ua/img/cms/bashnya/2.jpg'
+  // );
+  // img.setAttribute('src', 'https://mayertrade.com.ua/img/cms/bashnya/2.jpg');
+
+  // currentIndex = currentIndex === imagesSrc.length - 1 ? 0 : currentIndex + 1;
+
+  // 3 -> 0, 1, 2
+  currentIndex = (currentIndex + 1) % imagesSrc.length;
+
+  img.setAttribute('src', imagesSrc[currentIndex]);
+  // img.setAttribute('src', imagesSrc[currentIndex++]);
+  // if (currentIndex === imagesSrc.length) {
+  //   currentIndex = 0;
+  // }
+});
