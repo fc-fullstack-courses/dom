@@ -18,3 +18,16 @@
 .blue {
   color: blue;
 }
+
+.normal {
+  font-style: normal;
+  font-weight: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}

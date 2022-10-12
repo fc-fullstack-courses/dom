@@ -149,7 +149,8 @@ prevBtn.addEventListener('click', () => {
   img.setAttribute('src', imagesSrc[currentIndex]);
 });
 
-const [redBtn, greenBtn, blueBtn] = document.querySelectorAll('.color-btn');
+const [redBtn, greenBtn, blueBtn, normal, italic, bold] =
+  document.querySelectorAll('.color-btn');
 const text = document.querySelector('#text');
 
 // redBtn.addEventListener('click', (e) => {
@@ -180,9 +181,26 @@ const text = document.querySelector('#text');
 //   text.setAttribute('class', 'blue');
 // });
 
+const parDefaultClassNames = text.className;
+
+const colorsArr = ['red', 'green', 'blue'];
+
+const stylesArr = ['italic', 'normal', 'bold'];
+
 function commonListener(e) {
-  console.log(e);
-  text.setAttribute('class', e.target.dataset.textColor);
+  // console.log(e);
+  // text.className = parDefaultClassNames;
+  // text.setAttribute('class', e.target.dataset.textColor);
+
+  if (e.target.dataset.textColor) {
+    text.classList.remove(...colorsArr);
+    text.classList.add(e.target.dataset.textColor);
+  }
+
+  if(e.target.dataset.textStyle) {
+    text.classList.remove(...stylesArr);
+    text.classList.add(e.target.dataset.textStyle);
+  }
 }
 
 redBtn.addEventListener('click', commonListener);
@@ -190,3 +208,9 @@ redBtn.addEventListener('click', commonListener);
 greenBtn.addEventListener('click', commonListener);
 
 blueBtn.addEventListener('click', commonListener);
+
+normal.addEventListener('click', commonListener);
+
+italic.addEventListener('click', commonListener);
+
+bold.addEventListener('click', commonListener);
