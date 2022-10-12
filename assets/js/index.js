@@ -149,43 +149,15 @@ prevBtn.addEventListener('click', () => {
   img.setAttribute('src', imagesSrc[currentIndex]);
 });
 
-const [redBtn, greenBtn, blueBtn, normal, italic, bold] =
+const [redBtn, greenBtn, blueBtn, normal, italic, bold, redBg, greenBg, reset] =
   document.querySelectorAll('.color-btn');
 const text = document.querySelector('#text');
-
-// redBtn.addEventListener('click', (e) => {
-//   // text.classList.remove('green', 'blue');
-//   text.className = '';
-//   text.classList.add('red');
-// });
-
-// greenBtn.addEventListener('click', (e) => {
-//   text.className = '';
-//   text.classList.add('green');
-// });
-
-// blueBtn.addEventListener('click', (e) => {
-//   text.className = '';
-//   text.classList.add('blue');
-// });
-
-// redBtn.addEventListener('click', (e) => {
-//   text.setAttribute('class', 'red');
-// });
-
-// greenBtn.addEventListener('click', (e) => {
-//   text.setAttribute('class', 'green');
-// });
-
-// blueBtn.addEventListener('click', (e) => {
-//   text.setAttribute('class', 'blue');
-// });
 
 const parDefaultClassNames = text.className;
 
 const colorsArr = ['red', 'green', 'blue'];
-
 const stylesArr = ['italic', 'normal', 'bold'];
+const bgArr = ['bg-red', 'bg-green'];
 
 function commonListener(e) {
   // console.log(e);
@@ -197,7 +169,7 @@ function commonListener(e) {
     text.classList.add(e.target.dataset.textColor);
   }
 
-  if(e.target.dataset.textStyle) {
+  if (e.target.dataset.textStyle) {
     text.classList.remove(...stylesArr);
     text.classList.add(e.target.dataset.textStyle);
   }
@@ -214,3 +186,22 @@ normal.addEventListener('click', commonListener);
 italic.addEventListener('click', commonListener);
 
 bold.addEventListener('click', commonListener);
+
+/*
+ с помощью кнопок, дата-аттрибутов и классов
+ сделать переключатель цветов фона
+*/
+
+// 3. получить кнопки и приделать им обработчик
+function backgroundListener(e) {
+  text.classList.remove(...bgArr);
+  text.classList.add(e.target.dataset.bgColor);
+}
+
+redBg.addEventListener('click', backgroundListener);
+greenBg.addEventListener('click', backgroundListener);
+
+reset.addEventListener('click', (e) => {
+  // text.className = '';
+  text.classList.remove(...colorsArr, ...stylesArr, ...bgArr);
+});
