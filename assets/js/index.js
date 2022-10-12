@@ -168,15 +168,25 @@ const text = document.querySelector('#text');
 //   text.classList.add('blue');
 // });
 
-redBtn.addEventListener('click', (e) => {
-  text.setAttribute('class', 'red');
-});
+// redBtn.addEventListener('click', (e) => {
+//   text.setAttribute('class', 'red');
+// });
 
-greenBtn.addEventListener('click', (e) => {
-  text.setAttribute('class', 'green');
-});
+// greenBtn.addEventListener('click', (e) => {
+//   text.setAttribute('class', 'green');
+// });
 
-blueBtn.addEventListener('click', (e) => {
-  text.setAttribute('class', 'blue text nav');
-});
+// blueBtn.addEventListener('click', (e) => {
+//   text.setAttribute('class', 'blue');
+// });
 
+function commonListener(e) {
+  console.log(e);
+  text.setAttribute('class', e.target.dataset.textColor);
+}
+
+redBtn.addEventListener('click', commonListener);
+
+greenBtn.addEventListener('click', commonListener);
+
+blueBtn.addEventListener('click', commonListener);
