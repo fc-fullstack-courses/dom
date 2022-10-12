@@ -149,8 +149,9 @@ prevBtn.addEventListener('click', () => {
   img.setAttribute('src', imagesSrc[currentIndex]);
 });
 
-const [redBtn, greenBtn, blueBtn, normal, italic, bold, redBg, greenBg, reset] =
-  document.querySelectorAll('.color-btn');
+// const [redBtn, greenBtn, blueBtn, normal, italic, bold, redBg, greenBg, reset] =
+//   document.querySelectorAll('.color-btn');
+
 const text = document.querySelector('#text');
 
 const parDefaultClassNames = text.className;
@@ -160,7 +161,7 @@ const stylesArr = ['italic', 'normal', 'bold'];
 const bgArr = ['bg-red', 'bg-green'];
 
 function commonListener(e) {
-  // console.log(e);
+  console.log(e);
   // text.className = parDefaultClassNames;
   // text.setAttribute('class', e.target.dataset.textColor);
 
@@ -175,17 +176,21 @@ function commonListener(e) {
   }
 }
 
-redBtn.addEventListener('click', commonListener);
+for (const btn of document.querySelectorAll('.color-btn')) {
+  btn.addEventListener('click', commonListener);
+}
 
-greenBtn.addEventListener('click', commonListener);
+// redBtn.addEventListener('click', commonListener);
 
-blueBtn.addEventListener('click', commonListener);
+// greenBtn.addEventListener('click', commonListener);
 
-normal.addEventListener('click', commonListener);
+// blueBtn.addEventListener('click', commonListener);
 
-italic.addEventListener('click', commonListener);
+// normal.addEventListener('click', commonListener);
 
-bold.addEventListener('click', commonListener);
+// italic.addEventListener('click', commonListener);
+
+// bold.addEventListener('click', commonListener);
 
 /*
  с помощью кнопок, дата-аттрибутов и классов
@@ -198,10 +203,24 @@ function backgroundListener(e) {
   text.classList.add(e.target.dataset.bgColor);
 }
 
-redBg.addEventListener('click', backgroundListener);
-greenBg.addEventListener('click', backgroundListener);
+for (const btn of document.querySelectorAll('.bg-color-btn')) {
+  btn.addEventListener('click', backgroundListener);
+}
+// redBg.addEventListener('click', backgroundListener);
+// greenBg.addEventListener('click', backgroundListener);
+const reset = document.querySelector('#reset-btn');
+const container = document.querySelector('#container');
 
 reset.addEventListener('click', (e) => {
   // text.className = '';
   text.classList.remove(...colorsArr, ...stylesArr, ...bgArr);
 });
+
+function testListener(e) {
+  console.log(e.currentTarget);
+}
+
+reset.addEventListener('click', testListener, true); // btn
+container.addEventListener('click', testListener);  // div
+document.body.addEventListener('click', testListener); // body
+document.documentElement.addEventListener('click', testListener, true); // html
