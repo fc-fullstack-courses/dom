@@ -148,3 +148,35 @@ prevBtn.addEventListener('click', () => {
 
   img.setAttribute('src', imagesSrc[currentIndex]);
 });
+
+const [redBtn, greenBtn, blueBtn] = document.querySelectorAll('.color-btn');
+const text = document.querySelector('#text');
+
+// redBtn.addEventListener('click', (e) => {
+//   // text.classList.remove('green', 'blue');
+//   text.className = '';
+//   text.classList.add('red');
+// });
+
+// greenBtn.addEventListener('click', (e) => {
+//   text.className = '';
+//   text.classList.add('green');
+// });
+
+// blueBtn.addEventListener('click', (e) => {
+//   text.className = '';
+//   text.classList.add('blue');
+// });
+
+redBtn.addEventListener('click', (e) => {
+  text.setAttribute('class', 'red');
+});
+
+greenBtn.addEventListener('click', (e) => {
+  text.setAttribute('class', 'green');
+});
+
+blueBtn.addEventListener('click', (e) => {
+  text.setAttribute('class', 'blue text nav');
+});
+
