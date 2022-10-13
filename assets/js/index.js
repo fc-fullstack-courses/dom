@@ -200,7 +200,10 @@ for (const btn of document.querySelectorAll('.color-btn')) {
 // 3. получить кнопки и приделать им обработчик
 function backgroundListener(e) {
   text.classList.remove(...bgArr);
-  text.classList.add(e.target.dataset.bgColor);
+  const dataColor = e.target.dataset.bgColor;
+
+  const arr = dataColor.split(' ');
+  text.classList.add(...arr);
 }
 
 for (const btn of document.querySelectorAll('.bg-color-btn')) {
@@ -220,7 +223,18 @@ function testListener(e) {
   console.log(e.currentTarget);
 }
 
-reset.addEventListener('click', testListener, true); // btn
-container.addEventListener('click', testListener);  // div
-document.body.addEventListener('click', testListener); // body
-document.documentElement.addEventListener('click', testListener, true); // html
+// reset.addEventListener('click', testListener, true); // btn
+// container.addEventListener('click', testListener); // div
+// document.body.addEventListener('click', testListener); // body
+// document.documentElement.addEventListener('click', testListener, true); // html
+
+// text.setAttribute('id', 'test1234354');
+text.id = 'test1234354';
+
+// text.hidden = false;
+// Create -
+// Read +
+// Update +-
+// Delete -
+
+
