@@ -232,9 +232,10 @@ function testListener(e) {
 text.id = 'test1234354';
 
 // text.hidden = false;
-// Create -
+
+// Create +
 // Read +
-// Update +-
+// Update +
 // Delete -
 
 

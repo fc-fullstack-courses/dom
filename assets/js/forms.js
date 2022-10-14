@@ -18,7 +18,18 @@ form.addEventListener('submit', (e) => {
 
   // заполнить текстом
   testLi.textContent = formElem.elements.input.value;
-  
+
+  const deleteBtn = document.createElement('button');
+  deleteBtn.type = 'button';
+  deleteBtn.textContent = 'X';
+  testLi.append(deleteBtn);
+
+  deleteBtn.addEventListener('click', (e) => {
+    // написать такой слушатель, при исполнении которого будет
+    // удаляться наша лишка
+    // использовать Element.remove()
+  });
+
   // вставить лишку в конец формы
   todo.append(testLi);
 });
