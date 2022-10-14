@@ -1,0 +1,51 @@
+:root {
+  --cardWidth: 280px;
+}
+
+.workersSection {
+  padding: 20px;
+}
+
+.workersList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.workerItem {
+  /* ? */
+}
+
+.workerCard {
+  max-width: var(--cardWidth);
+}
+
+.imgWrapper {
+  max-width: inherit;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cardImg {
+  display: block;
+  width: 100%;
+  height: var(--cardWidth);
+  object-fit: cover;
+  object-position: top;
+}
+
+.cardInfo {
+  margin-top: 20px;
+}
+
+.cardName {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.cardDescription {
+  margin-top: 20px;
+  color: rgb(122, 122, 122);
+  line-height: 1.4;
+}
