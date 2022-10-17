@@ -19,12 +19,18 @@ function createUserCard(user) {
   const imgWrapper = document.createElement('div');
   imgWrapper.classList.add('imgWrapper');
 
+  const initials = document.createElement('p');
+  initials.classList.add('initials');
+  initials.textContent = fullName;
+
   const img = document.createElement('img');
   img.classList.add('cardImg');
   img.alt = `${fullName}`;
   img.src = user.profilePicture;
-  img.addEventListener('error', handleImageErrorV1);
-  imgWrapper.append(img);
+  // img.addEventListener('error', handleImageErrorV1);
+  img.addEventListener('error', handleImageErrorV2);
+
+  imgWrapper.append(initials,img);
 
   const cardInfo = document.createElement('div');
   cardInfo.classList.add('cardInfo');

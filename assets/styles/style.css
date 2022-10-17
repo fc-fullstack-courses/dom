@@ -22,16 +22,31 @@
 }
 
 .imgWrapper {
+  position: relative;
   max-width: inherit;
   width: 100%;
+  height: var(--cardWidth);
   border-radius: 10px;
   overflow: hidden;
 }
 
+.initials {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: black;
+}
+
 .cardImg {
   display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: var(--cardWidth);
   object-fit: cover;
   object-position: top;
 }
