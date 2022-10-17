@@ -10,12 +10,6 @@ function createUserCard(user) {
       ? 'No Data'
       : `${user.firstName} ${user.lastName}`;
 
-  const card = document.createElement('li');
-  card.classList.add('workerItem');
-
-  const article = document.createElement('article');
-  article.classList.add('workerCard');
-
   const imgWrapper = document.createElement('div');
   imgWrapper.classList.add('imgWrapper');
 
@@ -50,8 +44,14 @@ expedita porro, ipsa repellendus minus, illo a. Debitis expedita
 a ut hic soluta necessitatibus?`;
 
   cardInfo.append(cardName, cardDescription);
-  article.append(imgWrapper, cardInfo);
-  card.append(article);
 
-  return card;
+
+  const article = createElement(
+    'article',
+    { className: 'workerCard' },
+    imgWrapper,
+    cardInfo
+  );
+
+  return createElement('li', { className: 'workerItem' }, article);
 }
