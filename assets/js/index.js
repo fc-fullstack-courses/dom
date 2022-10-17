@@ -5,6 +5,11 @@ const workersList = document.querySelector('#root');
 workersList.append(...userCards);
 
 function createUserCard(user) {
+  const fullName =
+    !user.firstName && !user.lastName
+      ? 'No Data'
+      : `${user.firstName} ${user.lastName}`;
+
   const card = document.createElement('li');
   card.classList.add('workerItem');
 
@@ -16,7 +21,7 @@ function createUserCard(user) {
 
   const img = document.createElement('img');
   img.classList.add('cardImg');
-  img.alt = `${user.firstName} ${user.lastName} profile pic`;
+  img.alt = `${fullName}`;
   img.src = user.profilePicture;
   imgWrapper.append(img);
 
@@ -25,7 +30,8 @@ function createUserCard(user) {
 
   const cardName = document.createElement('h1');
   cardName.classList.add('cardName');
-  cardName.textContent = `${user.firstName} ${user.lastName}`;
+
+  cardName.textContent = `${fullName}`;
 
   const cardDescription = document.createElement('p');
   cardDescription.classList.add('cardDescription');
