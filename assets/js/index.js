@@ -21,7 +21,8 @@ function createUserCard(user) {
 
   const initials = document.createElement('p');
   initials.classList.add('initials');
-  initials.textContent = fullName;
+  initials.textContent =
+    fullName === 'No Data' ? fullName : getInitials(fullName);
 
   const img = document.createElement('img');
   img.classList.add('cardImg');
@@ -30,7 +31,7 @@ function createUserCard(user) {
   // img.addEventListener('error', handleImageErrorV1);
   img.addEventListener('error', handleImageErrorV2);
 
-  imgWrapper.append(initials,img);
+  imgWrapper.append(initials, img);
 
   const cardInfo = document.createElement('div');
   cardInfo.classList.add('cardInfo');
@@ -38,7 +39,7 @@ function createUserCard(user) {
   const cardName = document.createElement('h1');
   cardName.classList.add('cardName');
 
-  cardName.textContent = `${fullName}`;
+  cardName.textContent = fullName;
 
   const cardDescription = document.createElement('p');
   cardDescription.classList.add('cardDescription');
