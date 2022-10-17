@@ -23,6 +23,7 @@ function createUserCard(user) {
   img.classList.add('cardImg');
   img.alt = `${fullName}`;
   img.src = user.profilePicture;
+  img.addEventListener('error', handleImageErrorV1);
   imgWrapper.append(img);
 
   const cardInfo = document.createElement('div');
