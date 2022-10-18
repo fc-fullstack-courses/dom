@@ -1,3 +1,7 @@
+const {
+  USER_DATA: { DEFAULT_NAME, DESCRIPTION },
+} = CONSTANTS;
+
 const userCards = responseData.map((userData) => createUserCard(userData));
 
 const workersList = document.querySelector('#root');
@@ -12,7 +16,7 @@ function createUserCard(user) {
   const { firstName, lastName, profilePicture } = user;
 
   const fullName =
-    !firstName && !lastName ? 'No Data' : `${firstName} ${lastName}`;
+    !firstName && !lastName ? DEFAULT_NAME : `${firstName} ${lastName}`;
 
   const imgWrapper = createImage({
     fullName,
@@ -35,11 +39,7 @@ function createUserCard(user) {
 
   const cardDescription = document.createElement('p');
   cardDescription.classList.add('cardDescription');
-  cardDescription.textContent = `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae
-aut placeat ullam beatae expedita et sapiente quaerat?
-Laudantium cupiditate beatae placeat, iste ab aliquam facere ex
-expedita porro, ipsa repellendus minus, illo a. Debitis expedita
-a ut hic soluta necessitatibus?`;
+  cardDescription.textContent = DESCRIPTION;
 
   cardInfo.append(cardName, cardDescription);
 
@@ -57,7 +57,7 @@ function createImage(data) {
   const { fullName, profilePicture } = data;
 
   const initialsText =
-    fullName === 'No Data' ? fullName : getInitials(fullName);
+    fullName === DEFAULT_NAME ? fullName : getInitials(fullName);
   const initials = createElement('p', { className: 'initials' }, initialsText);
 
   const img = createElement('img', {
