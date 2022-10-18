@@ -19,6 +19,12 @@ function createUserCard(user) {
     profilePicture,
   });
 
+  /*
+    Созадать функцию, которая бы подчистила процесс создания 
+    cardInfo 
+    за пример взять createImage
+  */
+
   const cardInfo = document.createElement('div');
   cardInfo.classList.add('cardInfo');
 
