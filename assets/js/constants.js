@@ -9,3 +9,10 @@ const CONSTANTS = {
   },
   MAX_FRIENDS: 5000,
 };
+
+/*
+ const link = new URL ('https://www.facebook.com/JasonStatham/');
+
+ const SOC_NETWORKS_MAP = new Map();
+
+*/
